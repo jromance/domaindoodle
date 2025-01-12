@@ -39,7 +39,7 @@ def get_rdtype_register(domain_info: str, rdtype: str) -> list:
     records = []
     try:
         answer = dns.resolver.resolve(domain_info, rdtype)
-
+        # todo
         if rdtype == "MX":
             records = [{
                 'domain': domain_info,
@@ -47,7 +47,7 @@ def get_rdtype_register(domain_info: str, rdtype: str) -> list:
                 'preference': record.preference,
                 'exchange': record.exchange.to_text()
             } for record in answer]
-
+        # todo
         elif rdtype == 'SOA':
             records = [{
                 'domain': domain_info,
